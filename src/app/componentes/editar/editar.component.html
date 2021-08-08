@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <h2>Editar Tarefa</h2>
+
+  <form [formGroup]="form">
+    <p>Editar Tarefa:</p>
+    <input type="text" id="nomeInput" formControlName="nome" class="form-control" [ngClass]="cssValidacao('nome')"
+      placeholder="Digite a tarefa..." [disabled]="form.invalid" />
+    <div style="text-align: center; margin: 15px;">
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalTarefa"
+        (click)=editar() [disabled]="form.invalid">
+        Editar
+      </button> <button class="btn btn-light" [routerLink]="['']">Voltar</button>
+      <!---->
+    </div>
+  </form>
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalTarefa" tabindex="-1" aria-labelledby="ModalTarefaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalTarefaLabel">Edição</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Edição Concluida
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [routerLink]="['']">Listar
+            Tarefa</button>
+        </div>
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <h2>Cadastrar Tarefa</h2>
+
+  <form [formGroup]="form">
+    <p>Tarefa:</p>
+    <input type="text" id="nomeInput" formControlName="nome" class="form-control" [ngClass]="cssValidacao('nome')"
+      placeholder="Digite a tarefa..." [disabled]="form.invalid" />
+    <div style="text-align: center; margin: 15px;">
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" (click)=cadastrar()
+        data-bs-target="#modalTarefa" [disabled]="form.invalid">
+        Cadastrar
+      </button> <button class="btn btn-light" [routerLink]="['']">Voltar</button>
+      <!---->
+    </div>
+  </form>
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalTarefa" tabindex="-1" aria-labelledby="ModalTarefaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalTarefaLabel">Tarefa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Tarefa Cadastrada com sucesso!
+          Cadastrar nova tarefa?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nova Tarefa</button>
+          <button type="button" class="btn btn-primary" [routerLink]="['']" data-bs-dismiss="modal">Listar
+            Tarefas</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
